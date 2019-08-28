@@ -38,6 +38,7 @@ services:
       # - "$SSH_AUTH_SOCK:/tmp/agent.sock"
     environment:
       - SSH_AUTH_SOCK=/tmp/agent.sock
+      - RAILS_ENV=production
 volumes:
   docker-example-postgres: {}
   bundle: {}
