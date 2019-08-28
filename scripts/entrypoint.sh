@@ -13,5 +13,7 @@ usermod -g "$USER_GID" consul 2> /dev/null
 chown -R -h "$USER_UID" "$BUNDLE_PATH"
 chgrp -R -h "$USER_GID" "$BUNDLE_PATH"
 
+rm /var/www/consul/tmp/pids/server.pid && echo 'removed stalled pidfile'
+
 /usr/bin/sudo -EH -u consul "$@"
 
