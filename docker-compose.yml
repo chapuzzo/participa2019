@@ -40,6 +40,10 @@ services:
       - SSH_AUTH_SOCK=/tmp/agent.sock
       - RAILS_ENV=production
       - RAILS_SERVE_STATIC_FILES=true
+
+  smtp:
+    image: namshi/smtp
+
 volumes:
   docker-example-postgres: {}
   bundle: {}
