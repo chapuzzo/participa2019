@@ -41,7 +41,7 @@ services:
       - RAILS_SERVE_STATIC_FILES=true
     labels:
       - "traefik.enable=true"
-      - "traefik.frontend.rule=Host:app.my-awesome-app.org"
+      - "traefik.frontend.rule=Host:participa.ondara.org"
       - "traefik.port=3000"
       - "traefik.protocol=https"
 
