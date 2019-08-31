@@ -43,7 +43,7 @@ services:
       - "traefik.enable=true"
       - "traefik.frontend.rule=Host:participa.ondara.org"
       - "traefik.port=3000"
-      - "traefik.protocol=https"
+      - "traefik.protocol=http"
 
   smtp:
     image: namshi/smtp
