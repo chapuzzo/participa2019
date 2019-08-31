@@ -60,12 +60,30 @@ services:
 
   router:
     image: traefik
-    command: --api --docker
+    command:
+      - --docker
+      - --debug=false
+      - --logLevel=ERROR
+      - --defaultentrypoints=https,http
+      - --entryPoints=Name:http Address::80 Redirect.EntryPoint:https
+      - --entryPoints=Name:https Address::443 TLS
+      - --retry
+      - --docker.endpoint=unix:///var/run/docker.sock
+      - --docker.domain=participa.ondara.org
+      - --docker.watch=true
+      - --docker.exposedbydefault=false
+      - --acme.email=luismax@gmail.com
+      - --acme.storage=acme.json
+      - --acme.entryPoint=https
+      - --acme.onHostRule=true
+      - --acme.httpchallenge.entrypoint=http
+
     ports:
       - "80:80"
       - "8080:8080"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - ./acme.json:/acme.json
 
 
 volumes:
