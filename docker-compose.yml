@@ -57,6 +57,7 @@ services:
     working_dir: /var/www/consul
     volumes:
       - .:/var/www/consul:delegated
+      - bundle:/usr/local/bundle:delegated
     environment:
       - SSH_AUTH_SOCK=/tmp/agent.sock
       - RAILS_ENV=production
