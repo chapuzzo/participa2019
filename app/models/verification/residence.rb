@@ -34,6 +34,7 @@ class Verification::Residence
                 geozone:               geozone,
                 date_of_birth:         date_of_birth.in_time_zone.to_datetime,
                 gender:                gender,
+                verified_at:           Time.current,
                 residence_verified_at: Time.current)
   end
 
