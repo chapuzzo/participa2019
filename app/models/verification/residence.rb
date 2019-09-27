@@ -77,7 +77,7 @@ class Verification::Residence
 
     def residency_valid?
       @census_data.valid? &&
-        @census_data.postal_code == postal_code &&
+        @census_data.postal_code == postal_code.to_i.to_s &&
         @census_data.date_of_birth == date_of_birth
     end
 
